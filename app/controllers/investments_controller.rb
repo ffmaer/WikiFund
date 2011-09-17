@@ -27,7 +27,7 @@ class InvestmentsController < ApplicationController
     def vote_down
 
     project = Project.first
-    project.fund = project.fund + 0.1
+    project.fund = project.fund + 0.2
     project.save
 
     investment = Investment.find(params[:investment_id])

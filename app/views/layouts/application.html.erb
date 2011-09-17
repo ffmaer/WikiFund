@@ -9,11 +9,48 @@
 <body>
 
 <p class="notice"><%= notice %></p>
+
 <p class="alert"><%= alert %></p>
 
-<%= yield %>
+
+<div style="background-color: #000000; height:145px; width:1200px; margin-top:20;
+        background-image:url(./logo_header_01.jpg) ;    background-repeat:no-repeat; ">
+  <!--Logo -->
+  <div style="z-index: 101; padding: 6px 0 0 0px;" align="left">
+    <a href="http:///"><%= image_tag "TitleBar.png" %></a>
+  </div>
+</div>
+
+<div id="navMenuBar">
+  <ul id="nav">
+    <li id="navHome"><a href="http://www.google.com/">Home </a></li>
+    <li id="navMission"><a href="http://">Our Mission</a></li>
+    <li id="navProcess"><a href="http://">How It Works</a>
+      <ul>
+        <li><a href="http://">Blank </a></li>
+        <li><a href="http://">Blank</a></li>
+        <li><a href="http://">Blank</a></li>
+        <li><a href="http://">Blank</a></li>
+      </ul>
+    </li>
+    <li id="navContact"><a href="http://">Contact Us</a>
+      <ul>
+        <li class="item"><a href="./">Examples</a>
+          <ul class="second">
+            <li class="item"><a href="./" title="item">Examples</a></li>
+            <li class="item"><a href="./" title="item">Examples</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+  </ul>
+</div>
+<div id="pgBlock"><br><br>
+  <%= yield %>
+
+</div>
+
 
 </body>
 </html>
-
-
