@@ -1,0 +1,51 @@
+<h1>Project Name: <%= @project.name %></h1>
+<h1>Days Left: <%= @project.days %></h1>
+
+<h1>Fund Raised: <%= @project.fund %></h1>
+
+<hr/>
+
+
+<h1>The first way to do investment</h1>
+<h1>Price per vote: 10 cents</h1>
+<% @investments.each do |investment|
+
+%>
+    Investment name:
+    <%= investment.name %>
+    vote:       <%= investment.vote %>
+
+    <%= link_to "voteup", "investments/vote_up/#{investment.id}" %>
+    <br/>
+<%
+   end
+
+
+%>
+
+<%= form_for @new_investment do |f| %>
+    new investment name:   <%= f.text_field :name %>
+    <%= f.submit %>
+<% end %>
+
+
+
+<hr/>
+<h1>The second way to do investment</h1>
+<h1>You pay 1 dollar to choose 5 investments</h1>
+
+<%= form_for @project do |f| %>
+
+    <% counter = 5 %>
+    <%= f.fields_for :investments do |investment| %>
+
+        <% if investment.object.new_record? %>
+            new investment name:   <%= investment.text_field :name %>
+            it worths  <%= counter %> votes
+            <br/>
+            <% counter = counter -1 %>
+        <% end %>
+    <% end %>
+    <p><%= f.submit "Submit" %></p>
+<% end %>
+

@@ -1,0 +1,158 @@
+#navMenuBar {
+	background-color:#7F7F7F;
+	float:left;
+	position:absolute;
+	margin:0;
+	padding:0;
+	border:0;
+	width:1200px;
+	top:128px;
+	z-index:50;
+	}
+	
+#nav, #nav ul {
+	width:749px;
+	padding:0 0 0 190px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	font-weight:bold;
+	list-style:none;
+	float: left;
+	line-height:1;
+	background-color:transparent;
+}
+
+#nav ul {
+	padding-top: 0px;
+	}
+
+#nav a {
+	display: block;
+	text-decoration: none;
+	padding: 6px 0 6px 0; 
+	}
+
+#nav a:link, #nav a:active, #nav a:visited {
+	color: #FFFFFF;
+	}
+
+#nav li {
+	float: left;
+	padding: 0;
+}
+
+#nav li ul {
+	position: absolute;
+	left: -999em;
+	height: auto;
+	width: 150px;
+	font-weight: normal;
+	padding: 0;
+	z-index: 99;
+	}
+
+#nav li li {
+	padding-right: 0px;
+	width: 150px;
+	}
+
+#nav li ul a {
+	display: block;
+	/*width: 150px;*/
+	padding: 4px 0px 4px 6px;
+	border-left: 4px solid #CC0000;
+	}
+
+#nav li ul a:link,  #nav li ul a:active, #nav li ul a:visited  {
+	color: #FFFFCC;
+	background-color: #666666;
+	opacity: .9;
+	filter: alpha(opacity=90);/* opacity= IE */
+	}
+
+#nav li ul a:hover {
+	color: #000000;
+	background-color: #CCCCCC;
+	opacity: .9; 
+	filter: alpha(opacity=90); /* opacity- IE */
+	}
+
+
+#nav li ul ul { /* L3 */
+	margin: -15px 0 0 150px; 
+	z-index: 99;
+}
+
+#nav li:hover ul ul, #nav li:hover ul ul ul, #nav li.sfhover ul ul, #nav li.sfhover ul ul ul {
+	left: -999em; /* hides 3d level */
+}
+
+#nav li:hover ul, #nav li li:hover ul, #nav li li li:hover ul, #nav li.sfhover ul, #nav li li.sfhover ul, #nav li li li.sfhover ul {
+	left: auto; 
+}
+
+#nav li:hover, #nav li.sfhover {
+	background: transparent; 
+}
+
+
+#navHome {width:80px; }
+#navMission {width:110px; }
+#navProcess {width:120px; }
+#navContact {width:120px; }
+
+#navHome a:link, #navHome a:active, #navHome a:visited,
+#navMission a:link, #navMission a:active, #navMission a:visited,
+#navProcess a:link, #navProcess a:active, #navProcess a:visited,
+#navContact a:link, #navContact a:active, #navContact a:visited,
+{display: block;width: 100%;}	
+	
+#navHome a:hover,
+#navMission a:hover,
+#navProcess a:hover,
+#navContact a:hover
+{color: #C1F0F6;}
+
+
+.MenuTitle {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color:#E2D397;
+	margin:0;
+	padding:0;
+	width:140px;
+}
+.MenuTitle a {
+	color:#E2D397;
+}
+#vMenu ul {
+	font-size: 11px;
+	font-weight: bold;
+	list-style-type:none;
+	margin: 10px 0px 0px 0px ;
+	padding: 0;
+	}
+#vMenu li {	
+	padding: 0px 0px 0px 5px ;
+	}	
+#vMenu li.vMenuHeader{	
+	color:#E2D397;
+	padding: 0px 0px 10px 0px ;
+	}
+#vMenu ul li a{
+	display:block;
+	text-decoration:none;
+	color:#E2D397;
+	padding: 0px 0px 0px 0px;
+	height:20px;
+	}	
+#vMenu li.vMenuHeader a{	
+	color:#E2D397;
+	height:12px;
+	margin: 10px 0px 1px 0px ;
+	border-bottom:solid 1px #E2D397;
+	}
+#vMenu ul li a:hover{
+	color:#FFFFFF;
+	}	

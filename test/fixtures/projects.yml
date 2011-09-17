@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyText
+  days: 1
+  fund: 1
+
+two:
+  name: MyText
+  days: 1
+  fund: 1
