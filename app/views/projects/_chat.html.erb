@@ -4,5 +4,5 @@
 <%= javascript_include_tag "jquery.cloudmine" %>
 
 <textarea id="chat" cols="60" rows="20"></textarea>
-<p>Name: <input type="text" id="name"/> Message: <input type="text" id="message"/></p>
+<p>Name: <input type="text" id="name" value="<%= current_user.email %>"/> Message: <input type="text" id="message"/></p>
 
