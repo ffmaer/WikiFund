@@ -15,7 +15,10 @@
     <%= investment.name %>
     vote:       <%= investment.vote %>
 
-    <%= link_to "voteup", "investments/vote_up/#{investment.id}" %>
+    <%= link_to "up", "investments/vote_up/#{investment.id}" %>
+             |
+    <%= link_to "down", "investments/vote_down/#{investment.id}" %>
+
     <br/>
 <%
    end

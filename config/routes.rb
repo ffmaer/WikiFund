@@ -6,6 +6,7 @@ Wikifund::Application.routes.draw do
 
   match "investments/vote_up/:investment_id" => "investments#vote_up"
 
+  match "investments/vote_down/:investment_id" => "investments#vote_down"
 
   root :to => 'projects#index'
 

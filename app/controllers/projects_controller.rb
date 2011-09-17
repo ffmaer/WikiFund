@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
     @project = Project.first
 
     counter = 5
-
+    @project.fund = @project.fund + 1
     params[:project][:investments_attributes].each do |investment|
       name = investment[1]["name"]
       if name != ""
@@ -32,7 +32,7 @@ class ProjectsController < ApplicationController
         counter = counter - 1
       end
     end
-
+    @project.save
     redirect_to root_path
 
 
