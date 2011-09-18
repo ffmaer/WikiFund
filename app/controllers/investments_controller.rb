@@ -26,7 +26,7 @@ class InvestmentsController < ApplicationController
 
   def venmo_info(dollar, project_name)
     Venmo.donate(current_user, dollar, project_name).deliver
-    flash[:alert] = %Q{Thank your for your support! Please complete the donation by using <a href="http://venmo.com/?txn=Pay&recipients=ffmaer&amount=#{dollar}&note=Donate #{dollar} to make #{project_name} more awesome!">Venmo</a>.}
+    flash[:notice] = %Q{Thank your for your support! Please complete the donation by using <a href="http://venmo.com/?txn=Pay&recipients=ffmaer&amount=#{dollar}&note=Donate #{dollar} to make #{project_name} more awesome!"><img src=/images/venmo.png /></a>.}
 
   end
 
@@ -37,7 +37,8 @@ class InvestmentsController < ApplicationController
     project.fund = project.fund + dollar
 
     counter = 5
-    params[:investments].each do |investment|
+    if params[:investments].length == 5
+           params[:investments].each do |investment|
       name = investment[1]
       if name != ""
         temp_investment = project.investments.find_or_initialize_by_name(name)
@@ -57,6 +58,12 @@ class InvestmentsController < ApplicationController
 
 
     redirect_to root_path
+    else
+      flash[:alert] = "You must choose FIVE stocks!"
+      redirect_to root_path
+
+    end
+
   end
 
 

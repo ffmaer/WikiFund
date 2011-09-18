@@ -11,14 +11,15 @@ body {
 
 #leaderboard {
     border: 3px rgb(0, 64, 128) solid;
-    height : 250px;
+    height: 250px;
     overflow: auto;
 
 }
 
-select{
+select {
     width: 70px;
 }
+
 #left {
     position: absolute;
     width: 320px;
@@ -33,16 +34,19 @@ select{
     font: 12px myriad pro;
     position: absolute;
     left: 550px;
-    top:50px;
+    top: 50px;
     width: 400px;
 }
-#fund{
+
+#fund {
     color: #dc143c;
 }
-#project{
+
+#project {
     color: #8a2be2;
 
 }
+
 #title {
 
     vertical-align: middle;
@@ -67,10 +71,24 @@ select{
     height: 100px;
 }
 
-#info {
+#alert {
     position: absolute;
-    top:10px;
-    left:100px;
+    top: 10px;
+    left: 100px;
+    background:#ff0000;
+    font: 18px georgia;
+    color: #ffffff;
+    vertical-align: baseline;
+}
+
+#notice {
+    position: absolute;
+    top: 10px;
+    left: 100px;
+    background:#008000;
+    font: 18px georgia;
+    color: #ffffff;
+    vertical-align: baseline;
 }
 
 
@@ -81,3 +99,4 @@ select{
     width: 100px;
     height: 100px;
 }
+

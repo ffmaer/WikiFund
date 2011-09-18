@@ -53,7 +53,7 @@
 
   <div id="recipient">
 
-    <div id="fund">$<%= @project.fund %> RAISED</div>
+    <div id="fund">$<%= @project.fund.round(1) %>0 RAISED</div>
     RECIPIENT OF FUNDING: <br/>
     <div id="project"><%= @project.name %>  </div>
   </div>
