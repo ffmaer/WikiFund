@@ -3,7 +3,7 @@ Wikifund::Application.routes.draw do
   devise_for :users
 
   resources :investments, :projects
-
+  match "invest" => "investments#invest"
   match "get_stocks/:q" => "projects#get_stocks"
   match "investments/vote_up/:investment_id" => "investments#vote_up"
 

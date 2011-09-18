@@ -14,19 +14,24 @@ body {
 
 }
 
+select{
+    width: 70px;
+}
 #left {
     position: absolute;
     width: 300px;
     top: 60px;
-    left: 50px;
+    left: 100px;
     text-align: center;
     font-family: arial;
 }
 
 #right {
 
+    font: 12px myriad pro;
     position: absolute;
-    left: 400px;
+    left: 550px;
+    top:50px;
     width: 400px;
 }
 
@@ -35,12 +40,9 @@ body {
 }
 
 #recipient {
-    position: absolute;
-    left: 100px;
-    top: 450px;
+
     font: 18px arial;
     border: 3px #008000 solid;
-    width: 300px;
     text-align: center;
     color: rgb(0, 128, 128);
 
@@ -48,20 +50,8 @@ body {
 
 #content {
     position: absolute;
-    top: 500px;
+    top: 460px;
     left: 460px;
-}
-
-#blurb {
-    position: absolute;
-    top: 540px;
-    left: 510px;
-    width: 380px;
-    background-color: #9ABDFF;
-    color: white;
-    font-size: 19px;
-    font-style: italic;
-    font-weight: bold;
-    vertical-align: middle;
-    text-align: center;
+    width: 100px;
+    height: 100px;
 }
