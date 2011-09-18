@@ -1,3 +1,5 @@
+
+
 <h1>Project Name: <%= @project.name %></h1>
 <h1>Days Left: <%= @project.days %></h1>
 
@@ -17,9 +19,8 @@
     <%= investment.name %>
     vote:       <%= investment.vote %>
 
-    <%= link_to "up", "investments/vote_up/#{investment.id}" %>
-    |
-    <%= link_to "down", "investments/vote_down/#{investment.id}" %>
+    <%= link_to image_tag("up.jpeg", :class=> "button"), "investments/vote_up/#{investment.id}" %>
+    <%= link_to image_tag("down.jpeg"), "investments/vote_down/#{investment.id}" %>
 
     <br/>
 <%
