@@ -150,3 +150,8 @@ select {
     width: 425px;
     height: 300px;
 }
+
+#notes{
+    font:8px;
+    color: gray;
+}
