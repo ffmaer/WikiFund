@@ -3,14 +3,13 @@
 <head>
   <title>Wikifund</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag 'jquery', 'application' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
 
 
-<div style="background-color: #000000; height:145px; width:1200px; margin-top:20;
-        background-image:url(./logo_header_01.jpg) ;    background-repeat:no-repeat; ">
+<div style="background-color: #000000; height:145px; width:1200px; margin-top:20px;   background-repeat:no-repeat; ">
   <!--Logo -->
   <div style="z-index: 101; padding: 6px 0 0 0px;" align="left">
     <a href="http:///"><%= image_tag "TitleBar.png" %></a>
