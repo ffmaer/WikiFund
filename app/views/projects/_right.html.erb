@@ -1,8 +1,9 @@
 <div id="right">
 
   Ways of Voting:
-  <p> 1. You may click on the <%= image_tag "up.jpeg" %> (vote up: 10ct) or <%= image_tag "down.jpeg" %> (vote down:
-    20ct) on the leaderboard on the left.
+  <p> 1. You may click on the <%= image_tag "up.jpeg" %> (vote up: <b>10ct</b>) or <%= image_tag "down.jpeg" %> (vote
+    down:
+    <b>20ct</b>) on the leaderboard on the left.
   </p>
 
   <form action="/create">
@@ -27,6 +28,10 @@
             <td>
 
               <%= @arr[i] %>:
+            </td>
+
+            <td>
+
               <select class="op1">
                 <option value="blank"></option>
                 <% ('A'..'Z').each do |l| %>
@@ -35,9 +40,14 @@
                 <% end %>
 
               </select>
+              &nbsp;&nbsp;&nbsp;
+
               <select class="op2" name="investments[<%= i %>]">
                 <option value="blank"></option>
               </select>
+            </td>
+            <td>
+
 
               Give  <%= 6-i %> votes
             </td>
@@ -49,7 +59,8 @@
   </form>
 
 
-  <p> 3. You may choose and rank any 5 stocks in order of interest to give them multiple votes for only ONE dollar (!):
+  <p> 3. You may choose and rank any 5 stocks in order of interest to give them multiple votes for only
+    <b>ONE dollar</b> (!):
   </p>
 
 
@@ -60,5 +71,6 @@
   the button on the right.
   - If you would like ot know what other people are thinking - Join our chat! Just click the button on the bottom. <br/>
 
-  Authors: {<a href="http://twitter.com/ffmaer">Tengchao Zhou</a>,  <a href="http://twitter/yuzernaim">James Chang</a>, Charles (Qiwei) Jin, Sean Yeh}
+  Authors: {<a href="http://twitter.com/ffmaer">Tengchao Zhou</a>, <a href="http://twitter/yuzernaim">James Chang</a>,
+  Charles (Qiwei) Jin, Sean Yeh}
 </div>

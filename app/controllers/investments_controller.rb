@@ -31,33 +31,33 @@ class InvestmentsController < ApplicationController
   end
 
   def invest
-    dollar = 0.1
+    dollar = 1
     project = Project.first
     project_name = project.name
     project.fund = project.fund + dollar
 
     counter = 5
     if params[:investments].length == 5
-           params[:investments].each do |investment|
-      name = investment[1]
-      if name != ""
-        temp_investment = project.investments.find_or_initialize_by_name(name)
-        if !temp_investment.new_record?
-          temp_investment.vote = temp_investment.vote + counter + 1
-          temp_investment.save
-        else
-          temp_investment.vote = counter
-          temp_investment.save
+      params[:investments].each do |investment|
+        name = investment[1]
+        if name != ""
+          temp_investment = project.investments.find_or_initialize_by_name(name)
+          if !temp_investment.new_record?
+            temp_investment.vote = temp_investment.vote + (counter + 1)
+            temp_investment.save
+          else
+            temp_investment.vote = (counter+1)
+            temp_investment.save
+          end
+          counter = counter - 1
         end
-        counter = counter - 1
       end
-    end
-    project.save
+      project.save
 
-    venmo_info(dollar, project_name)
+      venmo_info(dollar, project_name)
 
 
-    redirect_to root_path
+      redirect_to root_path
     else
       flash[:alert] = "You must choose FIVE stocks!"
       redirect_to root_path
