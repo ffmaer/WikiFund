@@ -1,0 +1,67 @@
+body {
+    background: url(/images/bg.png) no-repeat;
+}
+
+#container {
+    position: absolute;
+    top: 55px;
+    left: 105px;
+
+}
+
+#leaderboard {
+    border: 3px rgb(0, 64, 128) solid;
+
+}
+
+#left {
+    position: absolute;
+    width: 300px;
+    top: 60px;
+    left: 50px;
+    text-align: center;
+    font-family: arial;
+}
+
+#right {
+
+    position: absolute;
+    left: 400px;
+    width: 400px;
+}
+
+#title {
+    position: absolute;
+}
+
+#recipient {
+    position: absolute;
+    left: 100px;
+    top: 450px;
+    font: 18px arial;
+    border: 3px #008000 solid;
+    width: 300px;
+    text-align: center;
+    color: rgb(0, 128, 128);
+
+}
+
+#content {
+    position: absolute;
+    top: 500px;
+    left: 460px;
+}
+
+#blurb {
+    position: absolute;
+    top: 540px;
+    left: 510px;
+    width: 380px;
+    background-color: #9ABDFF;
+    color: white;
+    font-size: 19px;
+    font-style: italic;
+    font-weight: bold;
+    vertical-align: middle;
+    text-align: center;
+}

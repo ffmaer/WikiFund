@@ -4,6 +4,7 @@ Wikifund::Application.routes.draw do
 
   resources :investments, :projects
 
+  match "get_stocks/:q" => "projects#get_stocks"
   match "investments/vote_up/:investment_id" => "investments#vote_up"
 
   match "investments/vote_down/:investment_id" => "investments#vote_down"

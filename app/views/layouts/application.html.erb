@@ -3,52 +3,20 @@
 <head>
   <title>Wikifund</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag 'jquery', 'application' %>
+  <%= javascript_include_tag 'jquery', 'application', 'jquery.simplemodal-1.4.1', 'basic', 'chat', 'jquery.cloudmine' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
+<div id="container">
 
-
-<div>
-  <div style="z-index: 101; padding: 6px 0 0 0;">
-    <a href="http:///"><%= image_tag "TitleBar.png" %></a>
-  </div>
-</div>
-
-<div id="navMenuBar">
-  <ul id="nav">
-    <li id="navHome"><a href="#">Home</a></li>
-    <li id="navMission"><a href="#">Our Mission</a></li>
-    <li id="navProcess"><a href="#">How It Works</a>
-      <ul>
-        <li><a href="#">Blank</a></li>
-        <li><a href="#">Blank</a></li>
-        <li><a href="#">Blank</a></li>
-        <li><a href="#">Blank</a></li>
-      </ul>
-    </li>
-    <li id="navContact"><a href="#">Contact Us</a>
-      <ul>
-        <li class="item"><a href="#">Examples</a>
-          <ul class="second">
-            <li class="item"><a href="#" title="item">Examples</a></li>
-            <li class="item"><a href="#" title="item">Examples</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-
-  </ul>
-</div>
-<div id="pgBlock"><br><br>
 
   <p class="notice"><%= raw notice %></p>
 
   <p class="alert"><%= raw alert %></p>
+
   <%= yield %>
-
 </div>
-
-
 </body>
 </html>
+
+

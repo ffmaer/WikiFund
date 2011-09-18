@@ -1,59 +1,214 @@
+<div id="left">
+  <h1>Leaderboard</h1>
+
+  <div id="leaderboard">
+    <table>
+
+      <tr>
+
+        <td colspan="2">STOCK NAME |</td>
+        <td colspan="3">NUMBER OF VOTES</td>
+      </tr>
+      <tr>
+
+        <td colspan="5"><br/></td>
+      </tr>
+
+      <% counter = 1 %>
+      <% @investments.each do |investment| %>
+
+          <tr>
+            <td>
+
+              <%= counter %>.
+            </td>
+            <td>
+              <%= investment.name %>
 
 
-<h1>Project Name: <%= @project.name %></h1>
-<h1>Days Left: <%= @project.days %></h1>
+            </td>
 
-<h1>Fund Raised: <%= @project.fund %></h1>
+            <td>
+              <%= link_to image_tag("up.jpeg"), "investments/vote_up/#{investment.id}" %>
 
-<hr/>
+            </td>
+            <td>
+              <%= investment.vote %>
 
+            </td>
+            <td>
 
-<h1>The first way to do investment</h1>
-<h2>Price per up vote: 10 cents</h2>
-<h2>Price per down vote: 20 cents</h2>
+              <%= link_to image_tag("down.jpeg"), "investments/vote_down/#{investment.id}" %>
 
-<% @investments.each do |investment|
+            </td>
+          </tr>
+          <% counter = counter+1 %>
 
-%>
-    Investment name:
-    <%= investment.name %>
-    vote:       <%= investment.vote %>
+      <% end %>
+    </table>
 
-    <%= link_to image_tag("up.jpeg"), "investments/vote_up/#{investment.id}" %>
-    <%= link_to image_tag("down.jpeg"), "investments/vote_down/#{investment.id}" %>
-
-    <br/>
-<%
-   end
-
-
-%>
-
-<%= form_for @new_investment do |f| %>
-    new investment name:   <%= f.text_field :name %>
-    <%= f.submit %>
-<% end %>
+  </div>
+</div>
 
 
 
-<hr/>
-<h1>The second way to do investment</h1>
-<h1>You pay 1 dollar to choose 5 investments</h1>
+<div id="right">
 
-<%= form_for @project do |f| %>
+  Ways of Voting:
 
-    <% counter = 5 %>
-    <%= f.fields_for :investments do |investment| %>
 
-        <% if investment.object.new_record? %>
-            new investment name:   <%= investment.text_field :name %>
-            it worths  <%= counter %> votes
-            <br/>
-            <% counter = counter -1 %>
-        <% end %>
-    <% end %>
-    <p><%= f.submit "Submit" %></p>
-<% end %>
+  <div>
+    <table>
+      <% 5.times do |i| %>
 
-<hr/>
-<%= render "chat" %>
+
+          <tr>
+            <td>
+              <select id="op1">
+                <option value="blank"></option>
+                <% ('A'..'Z').each do |l| %>
+                    <%= raw %Q{<option class="op11" value="#{l}">#{l}</option>"} %>
+
+                <% end %>
+
+              </select>
+              <select id="op2">
+                <option value="blank"></option>
+              </select>
+            </td>
+          </tr>
+      <% end %>
+
+    </table>
+
+
+    <span id="form_valid"></span>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var input_value = $('#form').val();
+            var s = "";
+
+            $('#op2').attr('disabled', true);
+            $('#op1').change(function() {
+                $('#op2').find('option').remove().end();
+                $('#op2').attr('disabled', false);
+                $.ajax({
+                    url: "/get_stocks/" + $('#op1').val(),
+                    cache: false,
+                    success: function(data) {
+                        j = $.parseJSON(data);
+
+                        $.each(j, function(key, value) {
+                            //$('#op2').append("<option value=\""+key+"\">"+value+"</option>");
+
+                            $('#op2').append(value);
+                        });
+
+                    }
+                });
+            });
+
+
+            function is_valid_stock(name, j) {
+                var is_valid = false;
+                $.each(j, function(key, value) {
+                    if (name.toUpperCase() == key) {
+                        is_valid = true;
+                    }
+                });
+                return is_valid;
+            }
+
+            function check_input_changed() {
+                var new_input_value = $('#form').val();
+                if (new_input_value != input_value) {
+                    input_value = new_input_value;
+                    on_input_change();
+                }
+            }
+
+            $(function () {
+                setInterval(check_input_changed, 0.5);
+            });
+
+            function on_input_change() {
+                var input_q = $('#form').val().toUpperCase();
+                if (input_q.length == 0) {
+                    $("#form_valid").html("");
+                    return;
+                }
+                $.ajax({
+                    url: "/get_stocks/" + input_q,
+                    success: function(data) {
+                        j = $.parseJSON(data);
+                        if (is_valid_stock(input_q, j)) {
+                            $("#form_valid").html("<img src=\"valid.gif\"></img>");
+                        } else {
+                            $("#form_valid").html("<img src=\"invalid.gif\"></img>");
+                        }
+
+
+                    }
+                });
+            }
+
+
+        });
+
+    </script>
+  </div>
+
+
+
+  <%= form_for @new_investment do |f| %>
+      new investment name:   <%= f.text_field :name %>
+      <%= f.submit %>
+  <% end %>
+
+  <%= form_for @project do |f| %>
+
+      <% counter = 5 %>
+      <%= f.fields_for :investments do |investment| %>
+
+          <% if investment.object.new_record? %>
+              <%= @arr[5-counter] %>:   <%= investment.text_field :name %>
+              Give  <%= counter+1 %> votes
+              <br/>
+              <% counter = counter -1 %>
+          <% end %>
+      <% end %>
+      <p><%= f.submit "Submit" %></p>
+  <% end %>
+</div>
+<div id="days">
+
+  <%= @project.days %>
+
+
+</div>
+
+<div id="fund">
+  <%= @project.fund %>
+</div>
+
+<div id="blurb">
+  ~ INVESTING FOR A BETTER FUTURE ~
+</div>
+
+
+<div id="recipient">
+  RECIPIENT OF FUNDING: <%= @project.name %>
+</div>
+
+<div id='content'>
+  <div id='basic-modal'>
+    <a href='#' class='basic'>CHAT</a>
+  </div>
+
+  <div id="basic-modal-content">
+    <%= render "chat" %>
+  </div>
+
+</div>
+
+
