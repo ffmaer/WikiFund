@@ -1,13 +1,12 @@
+Please enter stock ticker name (like "MSFT"for Microsoft")
 <div id="search_stock">
 
 </div>
-
 <input id="search_query" type="text"/>
-
 <script type="text/javascript">
 
     $("#search_query").keyup(function() {
-        $("#search_stock").load("/check/"+$(this).val());
+        $("#search_stock").load("/check/" + $(this).val());
     });
 
 </script>
