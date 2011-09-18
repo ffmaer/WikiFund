@@ -25,7 +25,7 @@ select{
     top: 60px;
     left: 90px;
     text-align: center;
-    font-family: arial;
+    font: georgia;
 }
 
 #right {
@@ -36,14 +36,23 @@ select{
     top:50px;
     width: 400px;
 }
+#fund{
+    color: #dc143c;
+}
+#project{
+    color: #8a2be2;
 
+}
 #title {
-    position: absolute;
+
+    vertical-align: middle;
+    font-size: 36px;
+    text-align: center;
 }
 
 #recipient {
 
-    font: 18px arial;
+    font: 18px georgia;
     border: 3px #008000 solid;
     text-align: center;
     color: rgb(0, 128, 128);
@@ -53,7 +62,7 @@ select{
 #content {
     position: absolute;
     top: 460px;
-    left: 460px;
+    left: 450px;
     width: 100px;
     height: 100px;
 }

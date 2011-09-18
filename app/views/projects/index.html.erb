@@ -83,9 +83,9 @@
                 success: function(data) {
                     j = $.parseJSON(data);
                     if (is_valid_stock(input_q, j)) {
-                        $("#form_valid").html("<img src=\"valid.gif\"></img>");
+                        $("#form_valid").html("<img src=/images/valid.gif>");
                     } else {
-                        $("#form_valid").html("<img src=\"invalid.gif\"></img>");
+                        $("#form_valid").html("<img src=/images/invalid.gif>");
                     }
 
 

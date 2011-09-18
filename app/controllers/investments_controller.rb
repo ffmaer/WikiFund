@@ -1,5 +1,6 @@
 class InvestmentsController < ApplicationController
 
+  before_filter :authenticate_user!
 
   def create
     dollar = 0.1

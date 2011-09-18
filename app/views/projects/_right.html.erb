@@ -1,16 +1,21 @@
 <div id="right">
 
   Ways of Voting:
-  <p> 1. You may click on the <%= image_tag "up.jpeg" %> (vote up: 10ct) or <%= image_tag "down.jpeg" %> (vote down: 20ct) on the leaderboard on the left.
-    <%= form_for @new_investment do |f| %>
-        <%= f.text_field :name %>
-        <%= f.submit %>
-    <% end %>
+  <p> 1. You may click on the <%= image_tag "up.jpeg" %> (vote up: 10ct) or <%= image_tag "down.jpeg" %> (vote down:
+    20ct) on the leaderboard on the left.
   </p>
 
+  <form action="/create">
+
+    <input name="investment[name]" type="text" id="form">
+    <input type="submit">
+
+  </form>
+
+  <span id="form_valid"></span>
 
   <p> 2. You may enter the name of a stock yourself if it is not trending but you would like to see represented
-    (10ct)
+
 
   </p>
 
@@ -44,8 +49,6 @@
     <input type="submit">
   </form>
 
-
-  <span id="form_valid"></span>
 
   <p> 3. You may choose and rank any 5 stocks in order of interest to give them multiple votes for only ONE dollar (!):
   </p>
