@@ -1,152 +1,25 @@
-<div id="left">
-  <h1>Leaderboard</h1>
-
-  <div id="leaderboard">
-    <table>
-
-      <tr>
-
-        <td colspan="2">STOCK NAME |</td>
-        <td colspan="3">NUMBER OF VOTES</td>
-      </tr>
-      <tr>
-
-        <td colspan="5"><br/></td>
-      </tr>
-
-      <% counter = 1 %>
-      <% @investments.each do |investment| %>
-
-          <tr>
-            <td>
-
-              <%= counter %>.
-            </td>
-            <td>
-              <%= investment.name %>
+<%= render "left" %>
+<%= render "right" %>
 
 
-            </td>
 
-            <td>
-              <%= link_to image_tag("up.jpeg"), "investments/vote_up/#{investment.id}" %>
 
-            </td>
-            <td>
-              <%= investment.vote %>
-
-            </td>
-            <td>
-
-              <%= link_to image_tag("down.jpeg"), "investments/vote_down/#{investment.id}" %>
-
-            </td>
-          </tr>
-          <% counter = counter+1 %>
-
-      <% end %>
-    </table>
-
-  </div>
-  <br/>
-
-  <div id="recipient">
-
-    $  <%= @project.fund %> RAISED<br/>
-    RECIPIENT OF FUNDING:<br/>
-    <%= @project.name %>
+<div id='basic-modal'>
+  <div id="content"><a href='#' class='basic-1'><%= image_tag "blank.png", :height=>"60px", :width=>"100px" %></a></div>
+  <div id="content-2"><a href='#' class='basic-2'><%= image_tag "blank.png", :height=>"60px", :width=>"100px" %></a>
   </div>
 </div>
 
-
-
-<div id="right">
-
-  Ways of Voting:
-  <p> 1. You may click on the [icon] (vote up: 10ct) or [icon] (vote down: 20ct) on the leaderboard on the left.
-    <%= form_for @new_investment do |f| %>
-        <%= f.text_field :name %>
-        <%= f.submit %>
-    <% end %>
-  </p>
-
-
-  <p> 2. You may enter the name of a stock yourself if ti is not trending but you would like to see represented
-    (10ct)
-
-  </p>
-
-
-  <form action="/invest" method="post">
-
-    <table>
-      <% 5.times do |i| %>
-          <tr>
-            <td>
-
-              <%= @arr[i] %>:
-              <select class="op1">
-                <option value="blank"></option>
-                <% ('A'..'Z').each do |l| %>
-                    <%= raw %Q{<option class="op11" value="#{l}">#{l}</option>"} %>
-
-                <% end %>
-
-              </select>
-              <select class="op2" name="investments[<%= i %>]">
-                <option value="blank"></option>
-              </select>
-
-              Give  <%= 6-i %> votes
-            </td>
-          </tr>
-      <% end %>
-
-    </table>
-    <input type="submit" value="Submit">
-  </form>
-
-
-  <span id="form_valid"></span>
-
-  <p> 3. You may choose and rank any 5 stocks in order of interest to give them multiple votes for only ONE dollar (!):
-  </p>
-
-
-  When you are done with all FIVE choices - please click: (Button)
-
-
-  TIPS: - If you don’t know much about stocks, don’t worry - you can look them up in our stock viewer, Just click
-  the button on the right.
-  - If you would like ot know what other people are thinking - Join our chat! Just click the button on the bottom:
-
-
-</div>
-<div id="days">
-
-  <%= @project.days %>
-
-
+<div id="basic-modal-content-1" align="center">
+  <%= render "chat" %>
 </div>
 
-<div id="fund">
+<div id="basic-modal-content-2" align="center">
+  <%= render "check" %>
 </div>
 
 
 
-
-
-
-<div id='content'>
-  <div id='basic-modal'>
-    <a href='#' class='basic'><%= image_tag "blank.png", :height=>"60px", :width=>"100px" %></a>
-  </div>
-
-  <div id="basic-modal-content" align="center">
-    <%= render "chat" %>
-  </div>
-
-</div>
 
 
 

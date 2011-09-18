@@ -1,0 +1,59 @@
+<div id="left">
+  <h1>Leaderboard</h1>
+
+  <div id="leaderboard">
+    <table>
+
+      <tr>
+
+        <td colspan="2">STOCK NAME |</td>
+        <td colspan="3">NUMBER OF VOTES</td>
+      </tr>
+      <tr>
+
+        <td colspan="5"><br/></td>
+      </tr>
+
+      <% counter = 1 %>
+      <% @investments.each do |investment| %>
+
+          <tr>
+            <td>
+
+              <%= counter %>.
+            </td>
+            <td>
+              <%= investment.name %>
+
+
+            </td>
+
+            <td>
+              <%= link_to image_tag("up.jpeg"), "investments/vote_up/#{investment.id}" %>
+
+            </td>
+            <td>
+              <%= investment.vote %>
+
+            </td>
+            <td>
+
+              <%= link_to image_tag("down.jpeg"), "investments/vote_down/#{investment.id}" %>
+
+            </td>
+          </tr>
+          <% counter = counter+1 %>
+
+      <% end %>
+    </table>
+
+  </div>
+  <br/>
+
+  <div id="recipient">
+
+    $  <%= @project.fund %> RAISED<br/>
+    RECIPIENT OF FUNDING:<br/>
+    <%= @project.name %>
+  </div>
+</div>

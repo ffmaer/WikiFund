@@ -1,0 +1,62 @@
+<div id="right">
+
+  Ways of Voting:
+  <p> 1. You may click on the <%= image_tag "up.jpeg" %> (vote up: 10ct) or <%= image_tag "down.jpeg" %> (vote down: 20ct) on the leaderboard on the left.
+    <%= form_for @new_investment do |f| %>
+        <%= f.text_field :name %>
+        <%= f.submit %>
+    <% end %>
+  </p>
+
+
+  <p> 2. You may enter the name of a stock yourself if it is not trending but you would like to see represented
+    (10ct)
+
+  </p>
+
+
+  <form action="/invest">
+
+    <table>
+      <% 5.times do |i| %>
+          <tr>
+            <td>
+
+              <%= @arr[i] %>:
+              <select class="op1">
+                <option value="blank"></option>
+                <% ('A'..'Z').each do |l| %>
+                    <%= raw %Q{<option class="op11" value="#{l}">#{l}</option>"} %>
+
+                <% end %>
+
+              </select>
+              <select class="op2" name="investments[<%= i %>]">
+                <option value="blank"></option>
+              </select>
+
+              Give  <%= 6-i %> votes
+            </td>
+          </tr>
+      <% end %>
+
+    </table>
+    <input type="submit">
+  </form>
+
+
+  <span id="form_valid"></span>
+
+  <p> 3. You may choose and rank any 5 stocks in order of interest to give them multiple votes for only ONE dollar (!):
+  </p>
+
+
+  When you are done with all FIVE choices - please click: (Button)
+
+
+  TIPS: - If you don’t know much about stocks, don’t worry - you can look them up in our stock viewer, Just click
+  the button on the right.
+  - If you would like ot know what other people are thinking - Join our chat! Just click the button on the bottom:
+
+
+</div>

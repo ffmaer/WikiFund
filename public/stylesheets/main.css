@@ -11,6 +11,8 @@ body {
 
 #leaderboard {
     border: 3px rgb(0, 64, 128) solid;
+    height : 250px;
+    overflow: auto;
 
 }
 
@@ -19,9 +21,9 @@ select{
 }
 #left {
     position: absolute;
-    width: 300px;
+    width: 320px;
     top: 60px;
-    left: 100px;
+    left: 90px;
     text-align: center;
     font-family: arial;
 }
@@ -52,6 +54,21 @@ select{
     position: absolute;
     top: 460px;
     left: 460px;
+    width: 100px;
+    height: 100px;
+}
+
+#info {
+    position: absolute;
+    top:10px;
+    left:100px;
+}
+
+
+#content-2 {
+    position: absolute;
+    top: 220px;
+    left: 900px;
     width: 100px;
     height: 100px;
 }

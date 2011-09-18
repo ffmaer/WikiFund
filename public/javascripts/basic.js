@@ -16,8 +16,14 @@ jQuery(function ($) {
 	//$('#basic-modal-content').modal();
 
 	// Load dialog on click
-	$('#basic-modal .basic').click(function (e) {
-		$('#basic-modal-content').modal();
+	$('#basic-modal .basic-1').click(function (e) {
+		$('#basic-modal-content-1').modal();
+
+		return false;
+	});
+
+    	$('#basic-modal .basic-2').click(function (e) {
+		$('#basic-modal-content-2').modal();
 
 		return false;
 	});
