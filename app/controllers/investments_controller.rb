@@ -13,7 +13,7 @@ class InvestmentsController < ApplicationController
 
     project = Project.first
     project.fund = project.fund + 0.1
-    current_user.balance = current_user.balance + 0.1
+    #current_user.balance = current_user.balance + 0.1
     current_user.save
     project.save
 
@@ -34,7 +34,7 @@ class InvestmentsController < ApplicationController
 
     project = Project.first
     project.fund = project.fund + 0.2
-    current_user.balance = current_user.balance + 0.2
+    #current_user.balance = current_user.balance + 0.2
     project.save
 
     investment = Investment.find(params[:investment_id])
