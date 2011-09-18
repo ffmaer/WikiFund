@@ -19,12 +19,30 @@
 </div>
 
 
-
+<div id="countdown" class="lcdfont big rounded">
+</div>
+<br />
+<div id="countdown2" class="lcdfont big rounded">
+</div>
 
 
 
 <script type="text/javascript">
     $(document).ready(function() {
+        var d_now = new Date();
+        var new_m = d_now.getMonth() + 1;
+        var new_y = d_now.getYear() + 1900;
+        if (new_m > 11) {
+            new_y++;
+            new_m = 0;
+        }
+
+        var d_final = new Date(new_y, new_m, 0, 0, 0, 0, 0);
+
+        // hack for now. not the actual date we will use
+        var d_final2 = new Date(new_y, new_m, 14, 0, 0, 0, 0);
+
+
         var input_value = $('#form').val();
         var s = "";
 
@@ -92,6 +110,45 @@
                 }
             });
         }
+
+        function get_remaining_time(d) {
+            var secs = Math.floor((d.getTime() - (new Date()).getTime()) / 1000);
+
+            var days = Math.floor(secs / (24 * 60 * 60));
+            if (days < 10) {
+                days = "0" + days;
+            }
+            secs -= days * (24 * 60 * 60);
+
+            var hours = Math.floor(secs / (60 * 60));
+            if (hours < 10) {
+                hours = "0" + hours;
+            }
+            secs -= hours * (60 * 60);
+
+            var mins = Math.floor(secs / 60);
+            if (mins < 10) {
+                mins = "0" + mins;
+            }
+            secs -= mins * 60;
+
+            if (secs < 10) {
+                secs = "0" + secs;
+            }
+            return days + "<span class='small'>d </span>" + hours + "<span class='small'>h </span>" +
+                    mins + "<span class='small'>m </span>" + secs + "<span class='small'>s </span>";
+
+        }
+
+        setInterval(function() {
+            var t = get_remaining_time(d_final);
+            $("#countdown").html(t);
+
+            var t2 = get_remaining_time(d_final2);
+            $("#countdown2").html(t2);
+            //$("#countdown").html(days);
+
+        }, 1000);
 
 
     });

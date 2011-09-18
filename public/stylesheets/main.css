@@ -100,3 +100,53 @@ select {
     height: 100px;
 }
 
+
+@font-face {
+	font-family: lcd_font;
+	src: url('/fonts/LCD-N___.TTF');
+}
+.lcdfont {
+	font-family: lcd_font;
+}
+.big{
+	font-size: 40px;
+}
+.superbig{
+	font-size: 400px;
+}
+.small{
+	font-size: 20px;
+}
+#countdown{
+    position: absolute;
+    top: 598px;
+    left: 415px;
+    width: 272px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+	background-color:black;
+	color:white;
+}
+#countdown2{
+    position: absolute;
+    top: 598px;
+    left: 726px;
+    width: 244px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+	background-color:black;
+	color:white;
+}
+.rounded{
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+
+}
+
+#stock_checker{
+    border: none;
+    width: 425px;
+    height: 300px;
+}
