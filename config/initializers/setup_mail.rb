@@ -3,7 +3,7 @@ ActionMailer::Base.smtp_settings = {
   :port => '587',
   :domain => "thewikifund.com",
   :authentication => :plain,
-  :user_name => "ffmaer@gmail.com",
-  :password => "Nyu!2013",
+  :user_name => "the.wiki.fund.info@gmail.com",
+  :password => "gjPmuckJ",
 #  :enable_starttls_auto => true
 }
