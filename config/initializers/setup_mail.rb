@@ -1,9 +1,8 @@
 ActionMailer::Base.smtp_settings = {
-  :address => "smtp.gmail.com",
-  :port => '587',
-  :domain => "thewikifund.com",
-  :authentication => :plain,
-  :user_name => "the.wiki.fund.info@gmail.com",
-  :password => "gjPmuckJ",
-#  :enable_starttls_auto => true
+    :address => "smtp.sendgrid.net",
+    :port => "25",
+    :authentication => :plain,
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD'],
+    :domain => ENV['SENDGRID_DOMAIN']
 }

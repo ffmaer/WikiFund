@@ -1,5 +1,5 @@
 class Venmo < ActionMailer::Base
-  default :from => "the.wiki.fund.info@gmail.com"
+  default :from => "ffmaer@gmail.com"
 
   def donate(user,dollar,project)
     @user = user
